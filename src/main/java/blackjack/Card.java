@@ -61,6 +61,23 @@ public class Card {
       	throw new IllegalArgumentException("Unrecoganized card rank");
 		}
 	}
+	
+	 
+   public boolean equals(Card card) { 
+ 
+	   //The easy case is that if the   
+	   if (card == this) { 
+	  	 return true; 
+	   } 
+	 
+	   //If the object is not instance of the card object return false
+	   if (!(card instanceof Card)) {
+	  	 return false;
+	   }
+	   
+	   //Return true if the rank and suit match
+	   return this.suit == card.suit && this.rank == card.rank;
+   } 
 
 	
 	public int getValue() {
