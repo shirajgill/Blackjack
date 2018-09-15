@@ -8,11 +8,17 @@ public class Card {
 	//Holds the rank of the card
 	private Ranks rank;
 	
-	//Constructor 
+	//Constructor with Suit and Rank
 	public Card(Suits suit, Ranks rank) {
-		this.value = this.getValueBasedOnCard(rank);
 		this.suit = suit;
 		this.rank = rank;
+		this.value = this.getValueBasedOnCard(rank);
+	}
+	
+	//Constructor with the symbols 
+	public Card(String suitSymbol, String rankSymbol) {
+		//Get the rank and suit associated with the symbols and call the constructor 
+		this(Suits.getSuitFromSymbol(suitSymbol), Ranks.getRankFromSymbol(rankSymbol));
 	}
 	
 	private int getValueBasedOnCard(Ranks rank) {
