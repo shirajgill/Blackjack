@@ -3,6 +3,7 @@ package core;
 import blackjack.Card;
 import blackjack.Ranks;
 import blackjack.Suits;
+import blackjack.Hand;
 import junit.framework.*;
 
 public class HandTest extends TestCase {

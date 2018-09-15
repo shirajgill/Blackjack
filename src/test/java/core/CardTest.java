@@ -25,6 +25,16 @@ public class CardTest extends TestCase {
 		assertEquals(true, cardA.equals(cardB));
 	}
 	
+	public void testCardCreateFromSymbol() {
+		//Symbols for the 7 of hearts 
+		String suit = "H";
+		String rank = "7";
+		//Create the card with these two values 
+		Card cardA = new Card(suit, rank);
+		//Assert that both the suit and rank are HEARTS and SEVEN respectively
+		assertEquals(Suits.HEARTS, cardA.getSuit());
+		assertEquals(Ranks.SEVEN, cardA.getRank());
+	}
 	
 	public void testValueKing() {
 		//Card A is a King of Hearts 
