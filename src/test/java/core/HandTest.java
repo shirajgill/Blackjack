@@ -143,17 +143,17 @@ public class HandTest extends TestCase {
 		Hand handB = new Hand(cardC, cardD);
 		
 		//Hand A = 14, Hand B = 18 so Hand B is better
-		assertEquals("TRUE", true, handB.isBetterOrSameHand(handA));
+		assertEquals("True because Hand B has higher value then Hand A", true, handB.isBetterOrSameHand(handA));
 
 		//Adding a 4 to hand A makes it also 18 so Hand A = B
 		handA.add(new Card(Suits.CLUBS, Ranks.FOUR));
 		//Hand A = 18, Hand B = 18 so Hand A is better or same
-		assertEquals("TRUE",true, handA.isBetterOrSameHand(handB));
+		assertEquals("True because both hands are the same", true, handA.isBetterOrSameHand(handB));
 		
 		//Adding a 4 to hand A makes it also 22 so Hand A is a bust
 		handA.add(new Card(Suits.HEARTS, Ranks.FOUR));
 		
 		//Hand A = 22, Hand B = 18 so Hand A is bust so false
-		assertEquals("TRUE",false, handA.isBetterOrSameHand(handB));
+		assertEquals("Hand A is a bust and Hand B is not so False", false, handA.isBetterOrSameHand(handB));
 	}
 }
