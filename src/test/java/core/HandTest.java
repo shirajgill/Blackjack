@@ -117,10 +117,14 @@ public class HandTest extends TestCase {
 		Card cardB = new Card(Suits.SPADES, Ranks.SEVEN);
 		//Make the hand such that it has 2 card
 		Hand hand = new Hand(cardA, cardB);
-		//The resulting hand should have 2 hands with card A and card B
-		Hand[] resultingHands = {new Hand(cardA), new Hand(cardB)};
-		//The returned array should be card A in one hand and Card B in the other
-		assertArrayEquals(resultingHands, hand.split());
+		//The resulting hand should have 2 hands with card A and card B each
+		String[] resultingHands = {new Hand(cardA).toString(), new Hand(cardB).toString()};
+		//Get the new hands 
+		Hand[] hands = hand.split();
+		//Convert the hands to string for comparing
+		String[] actualHands = {hands[0].toString(), hands[1].toString()};
+		//Assert both of the expected hands and the actual hands are equal
+		assertArrayEquals(resultingHands, actualHands);
 	}
 	
 	public void testCompareHands() {
@@ -132,7 +136,7 @@ public class HandTest extends TestCase {
 		Hand handA = new Hand(cardA, cardB);
 		
 		//Card C is a Ace of Hearts 
-		Card cardC = new Card(Suits.HEARTS, Ranks.SEVEN);
+		Card cardC = new Card(Suits.HEARTS, Ranks.ACE);
 		//Card D is a 7 of Spades 
 		Card cardD = new Card(Suits.SPADES, Ranks.SEVEN);
 		//Make the hand such that it has 2 card
@@ -148,10 +152,8 @@ public class HandTest extends TestCase {
 		
 		//Adding a 4 to hand A makes it also 22 so Hand A is a bust
 		handA.add(new Card(Suits.HEARTS, Ranks.FOUR));
+		
 		//Hand A = 22, Hand B = 18 so Hand A is bust so false
 		assertEquals("TRUE",false, handA.isBetterOrSameHand(handB));
 	}
-	
-	
-	
 }

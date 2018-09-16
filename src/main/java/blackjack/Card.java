@@ -82,7 +82,7 @@ public class Card {
 	   }
 	   
 	   //Return true if the rank and suit match
-	   return this.suit == card.suit && this.rank == card.rank;
+	   return this.rank == card.rank;
    } 
 
 	
@@ -110,4 +110,8 @@ public class Card {
 	public void setRank(Ranks rank) {
 		this.rank = rank;
 	}
+	
+	public String toString() { 
+    return this.suit.getSymbol() + this.rank.getSymbol();
+} 
 }
