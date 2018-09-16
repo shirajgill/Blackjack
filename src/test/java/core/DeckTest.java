@@ -1,13 +1,12 @@
 package core;
 
-import static org.junit.Assert.assertArrayEquals;
-
 import blackjack.Card;
 import blackjack.Ranks;
+import blackjack.Deck;
 import blackjack.Suits;
 import junit.framework.*;
 
-public class HandTest extends TestCase {
+public class DeckTest extends TestCase {
 
 	public void testDeckCreation() {
 		//Create new deck
@@ -29,12 +28,14 @@ public class HandTest extends TestCase {
 		//Get the top card of the deck 52 times 
 		for (int i = 0; i < 52; i++) {
 			boolean cardFound = false;
+			String cardFromDeck = deck.drawFromTop().toString();
 			//Loop over the card symbols
 			for (String card : cards) {
 				//IF the card is in our deck remove it from our deck by making it empty string
-				if (card == deck.drawTopCard().toString()) {
+				if (card.equals(cardFromDeck)) {
 					card = "";
 					cardFound = true;
+					break;
 				} 
 			}
 			//IF the card was not found once 
@@ -51,9 +52,9 @@ public class HandTest extends TestCase {
 			//Create new deck
 			Deck deck = new Deck();
 			//Get the top card (not draw) and compare it after the deck is shuffled to ensure the card is different  
-			Card card = deck.getTopCard();
+			Card card = deck.getFromTop();
 			deck.shuffle();
-			if (deck.getTopCard() != card) {
+			if (deck.getFromTop() != card) {
 				gotNewCard++;
 			}
 		}
