@@ -146,7 +146,7 @@ public class Hand {
 			cardsString += it.next().toString();
 			//Add the "," only if there's another item
 			if (it.hasNext()) {
-				cardsString += ",";
+				cardsString += ", ";
 			}
 		}
 		return cardsString;

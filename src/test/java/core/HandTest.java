@@ -156,4 +156,18 @@ public class HandTest extends TestCase {
 		//Hand A = 22, Hand B = 18 so Hand A is bust so false
 		assertEquals("Hand A is a bust and Hand B is not so False", false, handA.isBetterOrSameHand(handB));
 	}
+	
+	public void testToString() {
+		//Card A is a 7 of Hearts 
+		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
+		//Card B is a 7 of Spades 
+		Card cardB = new Card(Suits.SPADES, Ranks.SEVEN);
+		//Make the hand such that it has 2 card
+		Hand hand = new Hand(cardA, cardB);
+
+		//Assert that the string version of this hand is correct 
+		assertEquals("H7, S7", hand.toString());
+	}
+	
+	
 }
