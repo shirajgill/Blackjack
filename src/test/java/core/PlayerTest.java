@@ -4,6 +4,7 @@ import blackjack.Card;
 import blackjack.Ranks;
 import blackjack.Deck;
 import blackjack.Hand;
+import blackjack.Player;
 import blackjack.Suits;
 import junit.framework.*;
 
