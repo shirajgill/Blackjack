@@ -3,14 +3,14 @@ package blackjack;
 import java.util.ArrayList;
 import blackjack.Hand;
 
-public class Player {
+public class Dealer {
  
 	//Used to point at which index the current hand is 
 	private int currentHand;
  
 	private ArrayList<Hand> hands = new ArrayList<Hand>();
  
-	public Player() {
+	public Dealer() {
 		this.currentHand = 0;
 		//Add a new empty hand to the hands
 		this.hands.add(new Hand());
@@ -51,10 +51,37 @@ public class Player {
 
 	public void addToHand(Card card) {
 		this.getCurrentHand().add(card);
-	}	
-	
-	public String printHand() {
-		String handString = this.getCurrentHand().toString();
-		return "Player: " + handString;
 	}
+
+	public String printHand(boolean hideFirstCard) {
+		String handString = this.getCurrentHand().toString();
+		//If we're not showing the first card
+		if (hideFirstCard) {
+			//replace the first 2 characters with XX 
+			 handString = "XX" + handString.substring(2); 
+		}
+		
+		return "Dealer: " + handString;
+	}
+
+	public Object shouldDealerHit() {
+		//Get value of hand 
+		int valueOfHand = this.getCurrentHand().valueOfHand();
+		//Flag for if ace is present
+		boolean hasAce = false;
+		//Loop over all the cards cards that are in current hand  
+		for (Card card: this.getCurrentHand().getCards()) {
+			//Add them to the cards in the hand
+			if (card.getRank() == Ranks.ACE) {
+				hasAce = true;
+			}
+		}
+		//Return true if value is less or equal the 16 or if ace is present and value is 17 
+		return (valueOfHand <= 16 || (hasAce && valueOfHand == 17));
+	}
+
+	public Object shouldDealerSplit() {
+		//Return true if value is less or equal to 17
+		return this.getCurrentHand().valueOfHand() <= 17;
+	}	
 }

@@ -60,7 +60,7 @@ public class DealerTest extends TestCase {
 		dealer.getCurrentHand().add(new Card("C","7"));
 		//Dealer's hand currently is the hand with just S7, C7 
 		//Now the current hand should only have S7
-		assertEquals("Dealer: S7, C7", dealer.printHand());
+		assertEquals("Dealer: S7, C7", dealer.printHand(false));
 		//If we try to print with the dealer's hand but pass true that means hide the first card
 		assertEquals("Dealer: XX, C7", dealer.printHand(true));
 	}
@@ -95,6 +95,6 @@ public class DealerTest extends TestCase {
 		dealer2.getCurrentHand().add(new Card("S","9"));
 		dealer2.getCurrentHand().add(new Card("C","9"));
 		//The dealer hand is 18 so it should not split 
-		assertEquals(false, dealer.shouldDealerSplit());
+		assertEquals(false, dealer2.shouldDealerSplit());
 	}
 }

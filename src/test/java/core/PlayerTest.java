@@ -62,5 +62,4 @@ public class PlayerTest extends TestCase {
 		//Now the current hand should print the expected value
 		assertEquals("Player: S7, C7", player.printHand());
 	}
-	}
 }

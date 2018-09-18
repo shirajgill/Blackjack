@@ -137,6 +137,10 @@ public class Hand {
 		return false;
 	}
 	
+	public Deque<Card> getCards() {
+		return this.cards;
+	}
+	
 	public String toString() {
 		
 		String cardsString = "";
