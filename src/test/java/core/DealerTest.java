@@ -1,12 +1,7 @@
 package core;
 
 import blackjack.Card;
-import blackjack.Ranks;
-import blackjack.Deck;
-import blackjack.Hand;
-import blackjack.Player;
 import blackjack.Dealer;
-import blackjack.Suits;
 import junit.framework.*;
 
 public class DealerTest extends TestCase {
