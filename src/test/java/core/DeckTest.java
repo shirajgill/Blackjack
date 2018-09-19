@@ -64,4 +64,16 @@ public class DeckTest extends TestCase {
 		}
 	}
 	
+	public void testDeckHaveCard() {
+		Deck deck = new Deck();
+		//Get the card from the top 
+		Card cardOnTop = deck.getFromTop();
+		//Currently the card is in the deck
+		assertEquals(true, deck.isCardInDeck(cardOnTop));
+		//Draw the card from the top so we remove it 
+		Card cardFromDeck = deck.drawFromTop();
+		//Now that the card is removed we should get back false
+		assertEquals(false, deck.isCardInDeck(cardFromDeck));
+	}
+	
 }
