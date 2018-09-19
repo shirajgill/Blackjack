@@ -76,4 +76,14 @@ public class DeckTest extends TestCase {
 		assertEquals(false, deck.isCardInDeck(cardFromDeck));
 	}
 	
+	public void testRemoveCard() {
+		Deck deck = new Deck();
+		//Check if the Ace of clubs is in the deck
+		assertEquals(true, deck.isCardInDeck(new Card("C", "A")));
+		//Now remove it 
+		deck.removeCard(new Card("C", "A"));
+		//Now that the card is removed we should get back false
+		assertEquals(false, deck.isCardInDeck(new Card("C", "A")));
+	}
+	
 }
