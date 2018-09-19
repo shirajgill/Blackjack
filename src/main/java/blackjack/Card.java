@@ -69,20 +69,15 @@ public class Card {
 	}
 	
 	 
-   public boolean equals(Card card) { 
- 
-	   //The easy case is that if the   
-	   if (card == this) { 
-	  	 return true; 
-	   } 
-	 
-	   //If the object is not instance of the card object return false
-	   if (!(card instanceof Card)) {
-	  	 return false;
-	   }
-	   
-	   //Return true if the rank and suit match
+   public boolean rankEquals(Card card) { 
+	   //Return true if the rank match
 	   return this.rank == card.rank;
+   } 
+   
+   public boolean equals(Card card) { 
+  	 //This functions returns true if both suit and rank match 
+	   //Return true if the rank and suit match
+	   return this.rank == card.rank && this.suit == card.suit;
    } 
 
 	

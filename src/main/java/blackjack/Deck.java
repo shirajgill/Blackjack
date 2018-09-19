@@ -35,4 +35,24 @@ public class Deck {
 		//Shuffle the deck
 		Collections.shuffle(this.cards);
 	}
+
+	public boolean isCardInDeck(Card cardToCheck) {
+		for (Card card : this.cards) {
+			if (card.equals(cardToCheck) ) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+	public void removeCard(Card cardToRemove) {
+		
+		for(int i = 0; i < this.cards.size(); i++){
+			if (this.cards.get(i).equals(cardToRemove) ) {
+				//Card matched so remove card 
+				this.cards.remove(i);
+			}
+		}
+	}
 }

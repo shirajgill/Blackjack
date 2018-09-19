@@ -16,13 +16,17 @@ public class CardTest extends TestCase {
 		assertEquals(false, cardA.equals(cardB));
 	}
 	
-	public void testEqual() {
+	public void testRankEqual() {
 		//Card A is a 5 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.FIVE);
 		//Card B is a 5 of Clubs
 		Card cardB = new Card(Suits.CLUBS, Ranks.FIVE);
 		//These two cards are the same
-		assertEquals(true, cardA.equals(cardB));
+		assertEquals(true, cardA.rankEquals(cardB));
+		//Card C is a 4 of Clubs
+		Card cardC = new Card(Suits.CLUBS, Ranks.FOUR);
+		//These Card A and Card C are not same
+		assertEquals(false, cardA.rankEquals(cardC));
 	}
 	
 	public void testCardCreateFromSymbol() {
