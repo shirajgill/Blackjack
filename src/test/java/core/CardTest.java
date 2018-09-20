@@ -15,7 +15,7 @@ public class CardTest extends TestCase {
 		//These two cards aren't not the same
 		assertEquals(false, cardA.equals(cardB));
 	}
-	
+	 
 	public void testRankEqual() throws Exception {
 		//Card A is a 5 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.FIVE);
@@ -40,11 +40,15 @@ public class CardTest extends TestCase {
 		assertEquals(Ranks.SEVEN, cardA.getRank());
 	}
 	
-	public void testValueKing() throws Exception {
+	public void testValueFace() throws Exception {
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
+		Card cardB = new Card(Suits.HEARTS, Ranks.QUEEN);
+		Card cardC = new Card(Suits.HEARTS, Ranks.JACK);
 		//A king should equate to 10
 		assertEquals(10, cardA.getValue());
+		assertEquals(10, cardC.getValue());
+		assertEquals(10, cardB.getValue());
 	}
 
 	public void testValueSeven() throws Exception{

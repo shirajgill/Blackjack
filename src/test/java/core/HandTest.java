@@ -13,7 +13,7 @@ public class HandTest extends TestCase {
 	public void testHandValue() throws Exception{
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
-		//Card B is a 8 of Spades
+		//Card B is a 8 of Spades 
 		Card cardB = new Card(Suits.SPADES, Ranks.EIGHT);
 		
 		//Construct the hand with these 2 cards
@@ -97,6 +97,15 @@ public class HandTest extends TestCase {
 		hand.add(cardC);	
 		//The total value of the hand should now be 15 as the ace now counts as 1 
 		assertEquals(15, hand.valueOfHand());
+		//Add another Ace which means both aces are 1
+		hand.add(new Card("C","A"));
+		assertEquals(16, hand.valueOfHand());
+		//Test one ace 11 and one 1 
+		//Make the hand such that it has 2 card
+		hand = new Hand(new Card("C","A"), cardB);
+		//The total value of the hand should now be 12 as the ace now counts as 1 and one as 11
+		assertEquals(12, hand.valueOfHand());
+		
 	}
 	
 	public void testCanSplit()throws Exception {

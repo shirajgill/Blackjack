@@ -10,7 +10,7 @@ public class PlayerTest extends TestCase {
 		//This splits the players hand in 2 hands 
 		Player player = new Player();
 		//Get the current hand for the player
-		//Add 2 cards to that are the same 
+		//Add 2 cards to that are the same  
 		player.getCurrentHand().add(new Card("S","7"));
 		player.getCurrentHand().add(new Card("C","7"));
 		//Split the hands into 2 

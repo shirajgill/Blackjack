@@ -2,6 +2,7 @@ package blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import blackjack.Card;
 
@@ -33,7 +34,7 @@ public class Deck {
 
 	public void shuffle() {
 		//Shuffle the deck
-		Collections.shuffle(this.cards);
+		Collections.shuffle(this.cards, new Random());
 	}
 
 	public boolean isCardInDeck(Card cardToCheck) {

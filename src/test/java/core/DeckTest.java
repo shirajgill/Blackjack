@@ -10,7 +10,7 @@ public class DeckTest extends TestCase {
 
 	public void testDeckCreation()throws Exception {
 		//Create new deck
-		Deck deck = new Deck();
+		Deck deck = new Deck(); 
 		//Make an array of 52 cards 
 		String[] cards = new String[52];
 		

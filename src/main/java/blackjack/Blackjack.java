@@ -17,6 +17,7 @@ public class Blackjack {
 		this.deck = new Deck();
 		this.player = new Player();
 		this.dealer = new Dealer();
+		this.deck.shuffle();
 		//Get Initial cards for dealer and player
 		this.getCards();
 	}
@@ -60,6 +61,9 @@ public class Blackjack {
 			}
 			else {
 				throw new Exception("Incorrect Command Used");
+			}
+			if (this.player.getBestHand().isBlackjack() || this.player.getBestHand().isBust() ) {
+				break;
 			}
 			 System.out.println(this.player.printHand());
 

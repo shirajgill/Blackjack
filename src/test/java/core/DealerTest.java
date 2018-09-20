@@ -8,7 +8,7 @@ public class DealerTest extends TestCase {
 	
 	public void testSplit() throws Exception{
 		//This splits the dealers hand in 2 hands 
-		Dealer dealer = new Dealer();
+		Dealer dealer = new Dealer(); 
 		//Get the current hand for the dealer
 		//Add 2 cards to that are the same 
 		dealer.getCurrentHand().add(new Card("S","7"));

@@ -10,13 +10,13 @@ public class FileInputTest extends TestCase {
 	
 	public void testFileInititalCards() {
 		try {
-	
+	 
 		//Test the initial cards being dealt to the player and dealer 
 		//New fileGame with the textInput.txt file as the to read file
 		FileInput fileGame = new FileInput("fileTest.txt");
 		//The testInput.txt has S10 CA SQ C5 as the cards to deal to the different people
 		//At this point the cards should've been read so we will test the dealer and players hand 
-		//Now the player's hand should be S10, CA
+		//Now the player's hand should be S10, CA 
 		assertEquals("S10, CA", fileGame.player.getCurrentHand().toString());
 		//Now the dealer's hand should be SQ, C5  
 		assertEquals("SQ, C5", fileGame.dealer.getCurrentHand().toString());
