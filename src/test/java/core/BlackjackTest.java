@@ -1,9 +1,7 @@
 package core;
 
-import blackjack.Card;
-import blackjack.Dealer;
-import blackjack.Player;
-import blackjack.FileInput;
+
+import blackjack.Blackjack;
 import junit.framework.*;
 
 public class BlackjackTest extends TestCase {
@@ -12,7 +10,6 @@ public class BlackjackTest extends TestCase {
 	public void testPlay() {
 		try {
 		Blackjack blackjack = new Blackjack();
-		blackjack.play();
 		}  catch (Exception ex) {
 		 fail(ex.getMessage());
 		}
