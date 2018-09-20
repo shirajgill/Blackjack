@@ -10,7 +10,7 @@ public class Deck {
 
 	private ArrayList<Card> cards = new ArrayList<Card>();
 
-	public Deck() {
+	public Deck() throws Exception {
 		//For every suit
 		for (Suits suit : Suits.values()) {
 			//For every rank

@@ -6,7 +6,7 @@ import junit.framework.*;
 
 public class DealerTest extends TestCase {
 	
-	public void testSplit() {
+	public void testSplit() throws Exception{
 		//This splits the dealers hand in 2 hands 
 		Dealer dealer = new Dealer();
 		//Get the current hand for the dealer
@@ -19,7 +19,7 @@ public class DealerTest extends TestCase {
 		assertEquals("S7", dealer.getCurrentHand().toString());
 	}
 	
-	public void testAddToHand() {
+	public void testAddToHand()throws Exception {
 		//This adds a card to the Dealers current hand
 		Dealer dealer = new Dealer();
 		//Get the current hand for the dealer
@@ -34,7 +34,7 @@ public class DealerTest extends TestCase {
 		
 	}
 	
-	public void testGetBestHand() {
+	public void testGetBestHand()throws Exception {
 		//This gets the best hand
 		Dealer dealer = new Dealer();
 		//Get the current hand for the dealer
@@ -47,7 +47,7 @@ public class DealerTest extends TestCase {
 		//The case for a valid second hand is handled by the function: testCompareHands() in HandTest 
 	}
 	
-	public void testHandPrint() {
+	public void testHandPrint()throws Exception {
 		Dealer dealer = new Dealer();
 		//Get the current hand for the player
 		//Add 2 cards to that are the same 
@@ -60,7 +60,7 @@ public class DealerTest extends TestCase {
 		assertEquals("Dealer: XX, C7", dealer.printHand(true));
 	}
 	
-	public void testShouldDealerHit() {
+	public void testShouldDealerHit() throws Exception{
 		Dealer dealer = new Dealer();
 		//Add 2 cards to that are the same 
 		dealer.getCurrentHand().add(new Card("S","4"));
@@ -77,12 +77,12 @@ public class DealerTest extends TestCase {
 		assertEquals(false, dealer.shouldDealerHit());
 	}
 	
-	public void testShouldDealerSplit() {
+	public void testShouldDealerSplit() throws Exception{
 		Dealer dealer = new Dealer();
 		//Add 2 cards to that are the same 
 		dealer.getCurrentHand().add(new Card("S","7"));
 		dealer.getCurrentHand().add(new Card("C","7"));
-		//The dealer hand is only 14 so it should split 
+		//The dealer hand is only 14 so it should split  
 		assertEquals(true, dealer.shouldDealerSplit());
 		//Make a second dealer to test for not splitting
 		Dealer dealer2 = new Dealer();

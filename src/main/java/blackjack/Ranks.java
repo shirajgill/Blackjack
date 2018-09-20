@@ -22,17 +22,16 @@ public enum Ranks {
 		this.rankSymbol = rankSymbol; 
 	}
 	
-	public static Ranks getRankFromSymbol(String symbol) {
+	public static Ranks getRankFromSymbol(String symbol) throws Exception {
 		//Loop over all ranks and...
 		for (Ranks rank : Ranks.values()) {
 			//If the symbols match for this rank... 
-			if (rank.getSymbol().equals(symbol)) {
+			if (rank.getSymbol().equals(symbol)) { 
 				//suit is the suit associated with the symbol
 				return rank;
 			}
 		}
-		//Return null if no rank with the symbol
-		return null;
+		throw new Exception("Incorrect Card Used");
 	}
 	
 	public String getSymbol() {

@@ -38,7 +38,7 @@ public class Player {
 	public void split() {
 		Hand[] hands = this.getCurrentHand().split();
 		this.hands.set(0, hands[0]);
-		this.hands.add(hands[0]);
+		this.hands.add(hands[1]);
 	}
 	
 	public void switchCurrentHand() {
@@ -50,11 +50,15 @@ public class Player {
 	}
 
 	public void addToHand(Card card) {
-		this.getCurrentHand().add(card);
+		this.getCurrentHand().add(card); 
 	}	
 	
 	public String printHand() {
 		String handString = this.getCurrentHand().toString();
 		return "Player: " + handString;
+	}
+	
+	public int getHandCount( ) {
+		return this.hands.size();
 	}
 }

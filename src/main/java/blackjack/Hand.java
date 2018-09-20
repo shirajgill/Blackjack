@@ -74,7 +74,7 @@ public class Hand {
 
 	public boolean isBust() {
 		//Modify the ace before checking value
-		this.modifyAce();
+		this.modifyAce(); 
 		//Return if the value of the hand is over BLACKJACK
 		return this.valueOfHand() > BLACKJACK;
 	}
@@ -98,7 +98,7 @@ public class Hand {
 		if (this.cards.size() == 2) {
 			//Compare the first and second cards 
 			//If they're the same card return true 
-			if (this.cards.getFirst().equals(this.cards.getLast())) {
+			if (this.cards.getFirst().rankEquals(this.cards.getLast())) {
 				return true;
 			}
 		}

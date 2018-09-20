@@ -7,7 +7,7 @@ import junit.framework.*;
 
 public class CardTest extends TestCase {
 
-	public void testNotEqual() {
+	public void testNotEqual() throws Exception {
 		//Card A is a 5 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.FIVE);
 		//Card B is a King of Spades
@@ -16,7 +16,7 @@ public class CardTest extends TestCase {
 		assertEquals(false, cardA.equals(cardB));
 	}
 	
-	public void testRankEqual() {
+	public void testRankEqual() throws Exception {
 		//Card A is a 5 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.FIVE);
 		//Card B is a 5 of Clubs
@@ -29,7 +29,7 @@ public class CardTest extends TestCase {
 		assertEquals(false, cardA.rankEquals(cardC));
 	}
 	
-	public void testCardCreateFromSymbol() {
+	public void testCardCreateFromSymbol() throws Exception {
 		//Symbols for the 7 of hearts 
 		String suit = "H";
 		String rank = "7";
@@ -40,14 +40,14 @@ public class CardTest extends TestCase {
 		assertEquals(Ranks.SEVEN, cardA.getRank());
 	}
 	
-	public void testValueKing() {
+	public void testValueKing() throws Exception {
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
 		//A king should equate to 10
 		assertEquals(10, cardA.getValue());
 	}
 
-	public void testValueSeven() {
+	public void testValueSeven() throws Exception{
 		//Card A is a 7 of clubs 
 		Card cardA = new Card(Suits.CLUBS, Ranks.SEVEN);
 		//A seven should equate to 7

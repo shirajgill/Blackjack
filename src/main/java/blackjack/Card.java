@@ -9,19 +9,19 @@ public class Card {
 	private Ranks rank;
 	
 	//Constructor with Suit and Rank
-	public Card(Suits suit, Ranks rank) {
+	public Card(Suits suit, Ranks rank) throws Exception {
 		this.suit = suit;
-		this.rank = rank;
+		this.rank = rank; 
 		this.value = this.getValueBasedOnCard(rank);
 	}
 	
 	//Constructor with the symbols 
-	public Card(String suitSymbol, String rankSymbol) {
+	public Card(String suitSymbol, String rankSymbol) throws Exception {
 		//Get the rank and suit associated with the symbols and call the constructor 
 		this(Suits.getSuitFromSymbol(suitSymbol), Ranks.getRankFromSymbol(rankSymbol));
 	}
 	
-	private int getValueBasedOnCard(Ranks rank) {
+	private int getValueBasedOnCard(Ranks rank) throws Exception {
 		//Based on the rank, compute the value
 		switch (rank) {
      	case ACE:
@@ -64,13 +64,13 @@ public class Card {
         return 10;
       
       default:
-      	throw new IllegalArgumentException("Unrecoganized card rank");
+      	throw new Exception("Incorrect Card Used");
 		}
 	}
 	
 	 
    public boolean rankEquals(Card card) { 
-	   //Return true if the rank match
+	   //Return true if the rank match 
 	   return this.rank == card.rank;
    } 
    

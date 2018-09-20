@@ -64,10 +64,10 @@ public class Dealer {
 		return "Dealer: " + handString;
 	}
 
-	public Object shouldDealerHit() {
+	public boolean shouldDealerHit() {
 		//Get value of hand 
 		int valueOfHand = this.getCurrentHand().valueOfHand();
-		//Flag for if ace is present
+	  //Flag for if ace is present
 		boolean hasAce = false;
 		//Loop over all the cards cards that are in current hand  
 		for (Card card: this.getCurrentHand().getCards()) {
@@ -80,8 +80,12 @@ public class Dealer {
 		return (valueOfHand <= 16 || (hasAce && valueOfHand == 17));
 	}
 
-	public Object shouldDealerSplit() {
-		//Return true if value is less or equal to 17
-		return this.getCurrentHand().valueOfHand() <= 17;
+	public boolean shouldDealerSplit() {
+		//Return true if value is less or equal to 17 and if dealer can split
+		return this.canSplit() && this.getCurrentHand().valueOfHand() <= 17;
 	}	
+	
+	public int getHandCount( ) {
+		return this.hands.size();
+	}
 }

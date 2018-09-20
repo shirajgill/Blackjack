@@ -13,8 +13,8 @@ public enum Suits {
 		this.suitSymbol = suitSymbol; 
 	}
 	
-	public static Suits getSuitFromSymbol(String symbol) {
-		//Loop over all suits and...
+	public static Suits getSuitFromSymbol(String symbol) throws Exception {
+		//Loop over all suits and... 
 		for (Suits suit : Suits.values()) {
 			//If the symbols match for this suit... 
 			if (suit.getSymbol().equals(symbol)) {
@@ -22,8 +22,7 @@ public enum Suits {
 				return suit;
 			}
 		}
-		//Return null if no suit with the symbol
-		return null;
+		throw new Exception("Incorrect Card Used");
 	}
 	
 	public String getSymbol() {

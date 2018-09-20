@@ -10,7 +10,7 @@ import junit.framework.*;
 
 public class HandTest extends TestCase {
 
-	public void testHandValue() {
+	public void testHandValue() throws Exception{
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
 		//Card B is a 8 of Spades
@@ -22,7 +22,7 @@ public class HandTest extends TestCase {
 		assertEquals("The value of a face card and a numeric card", 18, hand.valueOfHand());
 	}
 	
-	public void testIsBustTrue() {
+	public void testIsBustTrue() throws Exception {
 		//Card A is a 10 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.TEN);
 		//Card B is a 10 of Spades
@@ -36,7 +36,7 @@ public class HandTest extends TestCase {
 	}
 	
 	
-	public void testIsBustFalse() {
+	public void testIsBustFalse() throws Exception {
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.CLUBS, Ranks.QUEEN);
 		//Construct the hand with A card
@@ -45,7 +45,7 @@ public class HandTest extends TestCase {
 		assertEquals(false, hand.isBust());
 	}
 	
-	public void testIsBlackjack() {
+	public void testIsBlackjack() throws Exception{
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
 		//Card B is a 6 of Spades
@@ -59,7 +59,7 @@ public class HandTest extends TestCase {
 		assertEquals(true, hand.isBlackjack());
 	}
 	
-	public void testAddCardToHand() {
+	public void testAddCardToHand() throws Exception{
 		//Card A is a King of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.KING);
 		//Make the hand such that it has only 1 card
@@ -78,7 +78,7 @@ public class HandTest extends TestCase {
 		assertEquals(13, hand.valueOfHand());
 	}
 	
-	public void testAceValues() {
+	public void testAceValues() throws Exception{
 		//Card A is a 7 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
 		//Card B is a Ace of Hearts 
@@ -99,7 +99,7 @@ public class HandTest extends TestCase {
 		assertEquals(15, hand.valueOfHand());
 	}
 	
-	public void testCanSplit() {
+	public void testCanSplit()throws Exception {
 		//Card A is a 7 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
 		//Card B is a 7 of Spades 
@@ -110,7 +110,7 @@ public class HandTest extends TestCase {
 		assertEquals(true, hand.canSplit());
 	}
 	
-	public void testSplit() {
+	public void testSplit() throws Exception{
 		//Card A is a 7 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
 		//Card B is a 7 of Spades 
@@ -127,7 +127,7 @@ public class HandTest extends TestCase {
 		assertArrayEquals(resultingHands, actualHands);
 	}
 	
-	public void testCompareHands() {
+	public void testCompareHands()throws Exception {
 		//Card A is a 7 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
 		//Card B is a 7 of Spades 
@@ -157,7 +157,7 @@ public class HandTest extends TestCase {
 		assertEquals("Hand A is a bust and Hand B is not so False", false, handA.isBetterOrSameHand(handB));
 	}
 	
-	public void testToString() {
+	public void testToString()throws Exception {
 		//Card A is a 7 of Hearts 
 		Card cardA = new Card(Suits.HEARTS, Ranks.SEVEN);
 		//Card B is a 7 of Spades 

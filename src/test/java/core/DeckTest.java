@@ -8,7 +8,7 @@ import junit.framework.*;
 
 public class DeckTest extends TestCase {
 
-	public void testDeckCreation() {
+	public void testDeckCreation()throws Exception {
 		//Create new deck
 		Deck deck = new Deck();
 		//Make an array of 52 cards 
@@ -45,7 +45,7 @@ public class DeckTest extends TestCase {
 		}
 	}
 	
-	public void testDeckShuffle() {
+	public void testDeckShuffle() throws Exception{
 		int gotNewCard = 0;
 		//For 100 loops		
 		for (int i = 0; i < 100; i++) {
@@ -64,7 +64,7 @@ public class DeckTest extends TestCase {
 		}
 	}
 	
-	public void testDeckHaveCard() {
+	public void testDeckHaveCard() throws Exception{ 
 		Deck deck = new Deck();
 		//Get the card from the top 
 		Card cardOnTop = deck.getFromTop();
@@ -76,7 +76,7 @@ public class DeckTest extends TestCase {
 		assertEquals(false, deck.isCardInDeck(cardFromDeck));
 	}
 	
-	public void testRemoveCard() {
+	public void testRemoveCard()throws Exception {
 		Deck deck = new Deck();
 		//Check if the Ace of clubs is in the deck
 		assertEquals(true, deck.isCardInDeck(new Card("C", "A")));

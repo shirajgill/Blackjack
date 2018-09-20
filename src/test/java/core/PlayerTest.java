@@ -6,7 +6,7 @@ import junit.framework.*;
 
 public class PlayerTest extends TestCase {
 	
-	public void testSplit() {
+	public void testSplit() throws Exception {
 		//This splits the players hand in 2 hands 
 		Player player = new Player();
 		//Get the current hand for the player
@@ -19,7 +19,7 @@ public class PlayerTest extends TestCase {
 		assertEquals("S7", player.getCurrentHand().toString());
 	}
 	
-	public void testAddToHand() {
+	public void testAddToHand()throws Exception {
 		//This adds a card to the player's current hand
 		Player player = new Player();
 		//Get the current hand for the player
@@ -34,7 +34,7 @@ public class PlayerTest extends TestCase {
 		
 	}
 	
-	public void testGetBestHand() {
+	public void testGetBestHand() throws Exception {
 		//This gets the best hand
 		Player player = new Player();
 		//Get the current hand for the player
@@ -47,7 +47,7 @@ public class PlayerTest extends TestCase {
 		//The case for a valid second hand is handled by the function: testCompareHands() in HandTest 
 	}
 	
-	public void testHandPrint() {
+	public void testHandPrint() throws Exception {
 		//This gets the best hand
 		Player player = new Player();
 		//Get the current hand for the player
