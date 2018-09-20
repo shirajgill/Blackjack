@@ -99,6 +99,8 @@ public class FileInput {
 				
 			}
 		}
+		System.out.println("" + this.player.printHand());
+	
 		boolean playerBust;
 		if (!player.getBestHand().isBust()) {
 		 playerBust = false;
